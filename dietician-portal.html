@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Recipe Studio — The Eating Edit</title>
+<title>Recipe Studio — Nuri Recipes</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Dancing+Script:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -389,7 +389,7 @@ function SignIn({ onSignIn }) {
         <div className="signin-script">welcome to your</div>
         <h1 className="signin-headline">Recipe Studio</h1>
         <p className="signin-sub">
-          Design beautiful, on-brand recipe cards and publish them directly to The Eating Edit feed. Your community is waiting.
+          Design beautiful, on-brand recipe cards and publish them directly to Nuri Recipes feed. Your community is waiting.
         </p>
         <div className="signin-form">
           <div className="form-group">
@@ -416,7 +416,7 @@ function SignIn({ onSignIn }) {
               name, credentials: creds, email,
               initials, avatarColor: colors[colorIdx],
               specialty: 'Registered Dietician',
-              bio: 'Registered Dietician sharing evidence-based recipes on The Eating Edit.',
+              bio: 'Registered Dietician sharing evidence-based recipes on Nuri Recipes.',
               followers: 0, following: 0, tags: [], recipeIds: [],
             };
             try {
@@ -559,7 +559,7 @@ function RecipeStudio({ user, onPublish }) {
     <>
       <header className="studio-bar">
         <div className="studio-bar-brand">
-          <span className="studio-bar-logo">The Eating Edit</span>
+          <span className="studio-bar-logo">Nuri Recipes</span>
           <div className="studio-bar-divider" />
           <span className="studio-bar-title">Recipe Studio</span>
         </div>
@@ -795,7 +795,7 @@ function SuccessPage({ user, onAnother }) {
     <>
       <header className="studio-bar">
         <div className="studio-bar-brand">
-          <span className="studio-bar-logo">The Eating Edit</span>
+          <span className="studio-bar-logo">Nuri Recipes</span>
           <div className="studio-bar-divider" />
           <span className="studio-bar-title">Recipe Studio</span>
         </div>
@@ -805,7 +805,7 @@ function SuccessPage({ user, onAnother }) {
           <div className="success-icon">🌿</div>
           <div className="success-title">Recipe submitted!</div>
           <p className="success-text">
-            Your recipe has been sent to The Eating Edit team for review. We'll check everything over and publish it to the feed within 1–2 business days. We'll email you at <strong>{user.email}</strong> when it's live.
+            Your recipe has been sent to Nuri Recipes team for review. We'll check everything over and publish it to the feed within 1–2 business days. We'll email you at <strong>{user.email}</strong> when it's live.
           </p>
           <button className="success-btn" onClick={onAnother}>Create another recipe</button>
         </div>
