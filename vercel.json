@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/admin.html", "destination": "/admin.html" },
+    { "source": "/dietician-portal", "destination": "/dietician-portal.html" },
+    { "source": "/dietician-portal.html", "destination": "/dietician-portal.html" },
+    { "source": "/((?!admin|dietician-portal|.*\\.html).*)", "destination": "/index.html" }
+  ]
+}
