@@ -1,7 +1,6 @@
 {
-  "buildCommand": "",
-  "outputDirectory": ".",
+  "cleanUrls": false,
   "rewrites": [
-    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+    { "source": "/((?!.*\\.html)(?!.*\\.js)(?!.*\\.css)(?!.*\\.png)(?!.*\\.jpg)(?!.*\\.ico).*)", "destination": "/index.html" }
   ]
 }
