@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nuri Recipes</title>
+<title>nuri.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Dancing+Script:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -528,11 +528,8 @@ const LABEL_MAP = {
 };
 
 const DIETICIANS = [
-  { id:1, name:'Emily Yuan', credentials:'RD, MSc', specialty:'Gut Health & High-Protein Nutrition', bio:'Registered Dietitian passionate about making gut-friendly, high-protein food that actually tastes incredible. Based in London.', initials:'EY', avatarColor:'#C4A882', followers:24700, following:312, tags:['gut','high-protein','pcos'], recipeIds:[1,2,3] },
-  { id:2, name:'Malaika Rahimtoola', credentials:'RD, PhD', specialty:'PCOS & Hormonal Health', bio:'PhD in Nutritional Science. I help women with PCOS reclaim their health through evidence-based nutrition. Researcher & clinician.', initials:'MR', avatarColor:'#8FA888', followers:18300, following:204, tags:['pcos','hormones','fertility'], recipeIds:[4,5,6] },
-  { id:3, name:'Isabelle Fontaine', credentials:'RD, IBCLC', specialty:'Fertility, Prenatal & Postpartum', bio:'Supporting women from preconception through postpartum. Lactation consultant & registered dietitian. Food is medicine.', initials:'IF', avatarColor:'#D4A5A5', followers:31200, following:187, tags:['fertility','postpartum','hormones'], recipeIds:[7,8,9] },
-  { id:4, name:'Amara Diallo', credentials:'RD, CNS', specialty:'Endometriosis & Anti-Inflammatory Eating', bio:'Certified Nutrition Specialist focused on reducing inflammation through food. Living with endo myself — I get it.', initials:'AD', avatarColor:'#B8A0C8', followers:14900, following:423, tags:['endometriosis','anti-inflammatory','period'], recipeIds:[10,11,12] },
-  { id:5, name:'Lucia Navarro', credentials:'RD, RN', specialty:'Thyroid & Autoimmune Nutrition', bio:"Registered Dietitian & Nurse. Hashimoto's warrior helping women navigate thyroid disease through targeted nutrition.", initials:'LN', avatarColor:'#A0B8D4', followers:9600, following:289, tags:['thyroid','energy','gut'], recipeIds:[13,14,15] },
+  { id:1, name:'Emily', credentials:'Co-founder', specialty:'Women\'s Health Nutrition', bio:'Co-founder of nuri. Building a recipe platform for women managing chronic conditions.', initials:'EY', avatarColor:'#C4A882', followers:0, following:0, tags:['pcos','gut','hormones'], recipeIds:[] },
+  { id:2, name:'Malaika', credentials:'Co-founder', specialty:'Women\'s Health Nutrition', bio:'Co-founder of nuri. Building a recipe platform for women managing chronic conditions.', initials:'MR', avatarColor:'#8FA888', followers:0, following:0, tags:['pcos','hormones','endometriosis'], recipeIds:[] },
 ];
 
 const PHOTO_IDS = [
@@ -541,29 +538,15 @@ const PHOTO_IDS = [
   'p0j-mE6mGo4','lp4y3GEV9bg','4_jhDO54BYg','bpPTlXWTOvg','MAbDy9lF5Ms',
 ];
 
-const RECIPES = [
-  { id:1, title:'High Protein, Gut-Friendly Bread', subtitle:'Fluffy, nourishing & delicious', dieticianId:1, healthLabels:['gut','high-protein','pcos'], prepTime:'15 min', cookTime:'35 min', servings:8, emoji:'🍞', ingredients:['8 egg whites','2.5 dl cottage cheese','10 dl bread flour','25 g fresh yeast','1 dl lukewarm water','2 tbsp olive oil','1.5 tsp salt','1 tsp honey (optional)'], instructions:['Preheat oven to 200°C.','Dissolve yeast in lukewarm water with honey.','Mix egg whites, cottage cheese and olive oil together.','Add flour and salt, knead into a smooth dough.','Let rise for 1 hour.','Shape into a loaf or place in a lined tin.','Brush with egg white and sprinkle your favourite toppings.','Bake for 30–35 minutes until golden.'], note:'Store in an airtight container for up to 4 days. Slice and freeze for easy mornings.' },
-  { id:2, title:'Gut-Friendly Bagels', subtitle:'Sugar-free & high protein', dieticianId:1, healthLabels:['gut-friendly','high-protein','energy'], prepTime:'10 min', cookTime:'30 min', servings:4, emoji:'🥯', ingredients:['2 dl cottage cheese','1 dl Greek yogurt','4 dl all-purpose flour','1.5 tsp baking powder','1 tsp salt','2 eggs (one for egg wash)','Toppings: sesame seeds, poppy seeds, cheese'], instructions:['Preheat oven to 190°C.','Mix dry ingredients together.','Add cottage cheese & Greek yogurt. Mix until a dough forms.','Divide into 4 portions. Roll into a ball, poke a hole and form a bagel shape.','Brush with egg yolk and add toppings.','Bake for 25–30 minutes until golden brown.','Let cool before serving.'], note:'Great with cream cheese, smoked salmon, or avocado.' },
-  { id:3, title:'Cinnamon, Cardamom & Vanilla Oatmeal', subtitle:'Creamy spicy oatmeal — like a warm hug', dieticianId:1, healthLabels:['gut','energy','hormones'], prepTime:'5 min', cookTime:'20 min', servings:2, emoji:'🥣', ingredients:['1 dl gluten-free or regular oats','½ dl gluten-free steel-cut oats','½ dl mixed seeds','2 tbsp cinnamon, 2 tbsp cardamom, 1 tbsp ginger powder','2 tbsp vanilla powder','Salt to taste','2 dl oat milk'], instructions:['Blend the oats and seeds together.','Add the cinnamon, cardamom, ginger & vanilla powder to the mix.','Boil 6 dl of water in a pot.','Add the oatmeal mix and cook on low heat for 10 minutes, stirring occasionally.','Add oat milk and salt, simmer for another 10 minutes.'], note:'Make extra oatmeal-mix to store and easily cook later. xx' },
-  { id:4, title:'PCOS Berry Hormone Bowl', subtitle:'Inositol-rich & anti-androgenic', dieticianId:2, healthLabels:['pcos','hormones','fertility'], prepTime:'10 min', cookTime:'0 min', servings:1, emoji:'🫐', ingredients:['1 cup frozen mixed berries','½ banana, frozen','½ cup Greek yogurt','1 tbsp flaxseed','1 tbsp inositol powder (optional)','Toppings: fresh berries, pumpkin seeds, cacao nibs, bee pollen'], instructions:['Blend frozen berries, banana and Greek yogurt until thick and smooth.','Pour into a bowl.','Top with fresh berries, pumpkin seeds, cacao nibs and bee pollen.','Stir in flaxseed or inositol if using.'], note:'Flaxseed is key for oestrogen balance. Eat within 20 minutes of making.' },
-  { id:5, title:'Spearmint & Chickpea Tabbouleh', subtitle:'Anti-androgenic & anti-inflammatory', dieticianId:2, healthLabels:['pcos','anti-inflammatory','period'], prepTime:'15 min', cookTime:'0 min', servings:3, emoji:'🥗', ingredients:['1 can chickpeas, drained & rinsed','1 large bunch fresh parsley, finely chopped','½ cup fresh spearmint, chopped','2 medium tomatoes, diced','1 cucumber, diced','2 tbsp olive oil','Juice of 1 lemon','Salt & pepper to taste'], instructions:['Rinse and drain chickpeas. Pat dry.','Finely chop parsley and spearmint.','Dice tomatoes and cucumber.','Combine all vegetables with chickpeas in a large bowl.','Dress with olive oil, lemon juice, salt and pepper.','Toss well and let sit for 10 minutes before serving.'], note:'Spearmint has been shown to reduce androgen levels in women with PCOS.' },
-  { id:6, title:'Seed Cycling Energy Balls', subtitle:'Support your cycle, phase by phase', dieticianId:2, healthLabels:['hormones','pcos','period','energy'], prepTime:'20 min', cookTime:'0 min', servings:12, emoji:'⚡', ingredients:['½ cup pumpkin seeds','½ cup flaxseeds (ground)','½ cup medjool dates, pitted','3 tbsp almond butter','2 tbsp cacao powder','1 tbsp coconut oil','Pinch of sea salt','Desiccated coconut to roll'], instructions:['Blend pumpkin seeds and flaxseeds until finely ground.','Add dates and blend until sticky.','Add almond butter, cacao, coconut oil and salt. Blend until combined.','Roll into 12 balls.','Coat in desiccated coconut.','Refrigerate for 30 minutes before eating.'], note:'For the follicular phase (days 1–14). Swap to sesame & sunflower seeds for the luteal phase.' },
-  { id:7, title:'Fertility Boosting Lentil Soup', subtitle:'Folate-rich & deeply nourishing', dieticianId:3, healthLabels:['fertility','postpartum','gut'], prepTime:'10 min', cookTime:'35 min', servings:4, emoji:'🍲', ingredients:['2 cups red lentils, rinsed','1 onion, diced','3 cloves garlic, minced','1 tin chopped tomatoes','1 tsp turmeric, 1 tsp cumin, ½ tsp cinnamon','4 cups vegetable stock','1 tbsp olive oil','Fresh lemon juice & parsley to serve'], instructions:['Heat olive oil, sauté onion until soft, about 5 minutes.','Add garlic and spices, cook for 1 minute until fragrant.','Add lentils, tomatoes and stock. Stir to combine.','Bring to a boil, then simmer for 25–30 minutes until lentils are soft.','Blend half the soup for a creamier texture.','Finish with lemon juice and fresh parsley.'], note:'Red lentils are one of the best plant sources of folate, essential for early pregnancy.' },
-  { id:8, title:'Golden Postpartum Recovery Broth', subtitle:'Mineral-rich & restorative', dieticianId:3, healthLabels:['postpartum','energy','gut'], prepTime:'10 min', cookTime:'4 hr', servings:6, emoji:'✨', ingredients:['1 kg chicken bones or whole carcass','2 carrots, roughly chopped','2 stalks celery, 1 onion, halved','4 cloves garlic','2 tbsp apple cider vinegar','1 tsp turmeric, 1 tsp black pepper','Fresh ginger, 2 cm piece'], instructions:['Place all ingredients in a large pot.','Cover with cold water and add apple cider vinegar.','Bring to a boil, then reduce to a very low simmer.','Cook for 4–8 hours, skimming any foam.','Strain and discard solids.','Season with salt and drink warm, or use as a soup base.'], note:'The apple cider vinegar draws minerals like calcium and magnesium from the bones.' },
-  { id:9, title:'Prenatal Salmon & Quinoa Bowl', subtitle:'Omega-3 & iron-rich', dieticianId:3, healthLabels:['fertility','hormones','energy'], prepTime:'10 min', cookTime:'20 min', servings:2, emoji:'🐟', ingredients:['2 salmon fillets','1 cup quinoa, rinsed','2 cups baby spinach','1 avocado, sliced','½ cucumber, sliced','2 tbsp sesame seeds','Dressing: 2 tbsp tahini, 1 tbsp lemon juice, 1 tsp honey'], instructions:['Cook quinoa according to packet instructions.','Season salmon with salt, pepper and lemon.','Pan-fry skin-side down for 4 minutes, flip and cook 2 more minutes.','Make the tahini dressing by whisking all ingredients.','Assemble bowls with quinoa, spinach, cucumber, avocado and salmon.','Drizzle with dressing and top with sesame seeds.'], note:'Salmon provides DHA which is critical for fetal brain development.' },
-  { id:10, title:'Anti-Inflammatory Turmeric Rice Bowl', subtitle:'Gentle on the gut, big on flavour', dieticianId:4, healthLabels:['endometriosis','anti-inflammatory','period'], prepTime:'10 min', cookTime:'25 min', servings:2, emoji:'🍛', ingredients:['1 cup basmati rice','1 tsp turmeric, ½ tsp black pepper','1 can chickpeas, drained','2 cups baby spinach','1 tbsp coconut oil, ½ tsp cumin seeds','Fresh coriander & lime to serve'], instructions:['Cook rice with turmeric and a pinch of salt.','Heat coconut oil, add cumin seeds and sizzle for 30 seconds.','Add chickpeas and cook until golden and slightly crispy, about 8 minutes.','Season with black pepper, salt and more turmeric.','Serve rice topped with chickpeas, spinach, coriander and lime.'], note:'Always pair turmeric with black pepper — it increases curcumin absorption by 2000%.' },
-  { id:11, title:'Dark Chocolate Endo Energy Balls', subtitle:'Magnesium-rich period pain support', dieticianId:4, healthLabels:['endometriosis','period','energy'], prepTime:'15 min', cookTime:'0 min', servings:10, emoji:'🍫', ingredients:['1 cup medjool dates, pitted','3 tbsp raw cacao powder','2 tbsp almond butter','1 tbsp chia seeds','1 tsp vanilla extract','Pinch of sea salt','Dark chocolate chips to roll (optional)'], instructions:['Blend dates until a sticky paste forms.','Add cacao, almond butter, chia seeds, vanilla and salt.','Blend until combined and sticky.','Roll into 10 small balls.','Roll in dark chocolate chips if desired.','Refrigerate for at least 30 minutes before eating.'], note:'Cacao is one of the richest food sources of magnesium, which helps relax muscles and reduce cramping.' },
-  { id:12, title:'Omega-3 Chia Pudding', subtitle:'Overnight, anti-inflammatory & effortless', dieticianId:4, healthLabels:['endometriosis','anti-inflammatory','gut'], prepTime:'5 min', cookTime:'0 min', servings:1, emoji:'💜', ingredients:['3 tbsp chia seeds','1 cup oat milk (or almond milk)','1 tsp vanilla extract, 1 tsp maple syrup','Pinch of cinnamon','Toppings: blueberries, pomegranate seeds, crushed walnuts'], instructions:['Combine chia seeds, milk, vanilla, maple syrup and cinnamon in a jar.','Stir well, making sure no chia seeds clump.','Stir again after 5 minutes.','Seal and refrigerate overnight or for at least 4 hours.','Top with blueberries, pomegranate seeds and walnuts.'], note:'Blueberries and pomegranate are some of the most potent anti-inflammatory fruits available.' },
-  { id:13, title:'Brazil Nut & Sea Vegetable Salad', subtitle:'Selenium & iodine for thyroid support', dieticianId:5, healthLabels:['thyroid','energy','gut'], prepTime:'15 min', cookTime:'0 min', servings:2, emoji:'🥬', ingredients:['2 cups mixed greens','2 tbsp dried wakame seaweed, rehydrated','6 Brazil nuts, roughly chopped','½ avocado, sliced, ½ cup edamame beans','1 tbsp sesame seeds','Dressing: 1 tbsp tamari, 1 tbsp rice vinegar, 1 tsp sesame oil, ½ tsp ginger'], instructions:['Rehydrate wakame in cold water for 5 minutes. Drain.','Make dressing by whisking all ingredients.','Combine greens, wakame, edamame and avocado in a bowl.','Top with Brazil nuts and sesame seeds.','Drizzle with dressing just before serving.'], note:'Just 2 Brazil nuts provide your entire daily selenium requirement, critical for thyroid health.' },
-  { id:14, title:'Adrenal Support Breakfast Bowl', subtitle:'Cortisol-balancing & energising', dieticianId:5, healthLabels:['thyroid','energy','hormones'], prepTime:'10 min', cookTime:'10 min', servings:1, emoji:'🍳', ingredients:['2 eggs','½ cup sweet potato, roasted','½ cup black beans, warmed','1 cup baby spinach, ¼ avocado','1 tbsp olive oil','Salt, pepper & smoked paprika','Optional: nutritional yeast'], instructions:['Roast diced sweet potato with olive oil and smoked paprika at 200°C for 20 minutes.','Fry or poach eggs to your liking.','Warm black beans in a small pan.','Arrange sweet potato, beans and spinach in a bowl.','Top with eggs and avocado. Season well.'], note:'Eating protein and complex carbs together first thing helps stabilise cortisol throughout the day.' },
-  { id:15, title:"Hashimoto's Healing Soup", subtitle:'Gut-lining repair & immune modulation', dieticianId:5, healthLabels:['thyroid','gut','anti-inflammatory'], prepTime:'10 min', cookTime:'30 min', servings:3, emoji:'🍜', ingredients:['4 cups bone broth','1 cup shiitake mushrooms, sliced','2 cm fresh ginger, grated, 3 cloves garlic, minced','1 cup kale, roughly torn','100 g rice noodles','1 tbsp tamari, 1 tsp miso paste'], instructions:['Bring bone broth to a gentle simmer.','Add garlic, ginger and mushrooms. Simmer for 10 minutes.','Cook rice noodles separately.','Add kale to the broth and cook for 2 minutes.','Remove from heat and stir in miso paste (do not boil after adding miso).','Serve broth over noodles, season with tamari.'], note:'Always add miso off the heat to preserve the beneficial bacteria.' },
-];
+const RECIPES = [];
 
 // ── COMMUNITY DATA (from portal) ─────────────────────────────
 const communityDieticians = (() => { try { return JSON.parse(localStorage.getItem('tee_community_dieticians') || '[]'); } catch { return []; } })();
 const communityRecipes    = (() => { try { return JSON.parse(localStorage.getItem('tee_community_recipes')    || '[]'); } catch { return []; } })();
-const ALL_DIETICIANS = [...DIETICIANS, ...communityDieticians];
-const ALL_RECIPES    = [...RECIPES,    ...communityRecipes];
+const adminRecipes        = (() => { try { return JSON.parse(localStorage.getItem('nuri_custom_recipes')      || '[]'); } catch { return []; } })();
+const adminDieticians     = (() => { try { return JSON.parse(localStorage.getItem('nuri_custom_dieticians')   || '[]'); } catch { return []; } })();
+const ALL_DIETICIANS = [...DIETICIANS, ...communityDieticians, ...adminDieticians];
+const ALL_RECIPES    = [...RECIPES,    ...communityRecipes,    ...adminRecipes];
 
 const getD = (id) => ALL_DIETICIANS.find(d => d.id === id);
 const getRecipesByD = (id) => ALL_RECIPES.filter(r => r.dieticianId === id);
@@ -681,8 +664,8 @@ function TopNav({ current, onChange }) {
     <header className="top-nav">
       <div className="top-nav-inner">
         <div className="top-nav-brand" onClick={() => onChange('feed')}>
-          <span className="top-nav-sub">recipes for her</span>
-          <span className="top-nav-logo">Nuri Recipes</span>
+          <span className="top-nav-sub">food that works for your body</span>
+          <span className="top-nav-logo">nuri.</span>
         </div>
         <nav className="top-nav-links">
           {links.map(l => (
@@ -702,13 +685,13 @@ function Welcome({ onStart }) {
   return (
     <div className="welcome-page">
       <div className="welcome-left">
-        <div className="welcome-brand-line">by registered dieticians</div>
-        <h1 className="welcome-headline">Nuri Recipes</h1>
+        <div className="welcome-brand-line">food that works for your body</div>
+        <h1 className="welcome-headline">nuri.</h1>
         <p className="welcome-sub">
-          Evidence-based recipes for women's health. Every recipe is curated and posted by a verified registered dietician — tailored to your health goals.
+          Recipes built by registered dietitians — for PCOS, IBS, endometriosis, and more. Not generic wellness. Real clinical expertise, in your kitchen.
         </p>
-        <button className="welcome-cta" onClick={onStart}>Find your health focus 🌿</button>
-        <p className="welcome-note">🩺 All recipes verified by registered dieticians only</p>
+        <button className="welcome-cta" onClick={onStart}>Find your recipes 🌿</button>
+        <p className="welcome-note">🩺 All recipes verified food that works for your body only</p>
       </div>
       <div className="welcome-right">
         <div className="welcome-recipe-stack">
@@ -734,7 +717,7 @@ function Onboarding({ onComplete }) {
     <div className="onboarding-wrap">
       <div className="onboarding-head">
         <div className="onboarding-step">Personalise your feed</div>
-        <h1 className="onboarding-title">What brings you here?</h1>
+        <h1 className="onboarding-title">What are you managing?</h1>
         <p className="onboarding-sub">Select all that feel relevant — we'll tailor your recipe feed.</p>
       </div>
       <div className="onboarding-grid">
@@ -752,7 +735,7 @@ function Onboarding({ onComplete }) {
         <button className="onboarding-btn" onClick={() => onComplete(selected)} disabled={selected.length === 0}>
           {selected.length === 0 ? 'Select at least one' : `Show my feed (${selected.length} selected)`}
         </button>
-        <button className="onboarding-skip" onClick={() => onComplete([])}>Skip — show me everything</button>
+        <button className="onboarding-skip" onClick={() => onComplete([])}>Browse all recipes</button>
       </div>
     </div>
   );
@@ -770,7 +753,7 @@ function FeedTab({ healthGoals, onRecipeClick, onDieticianClick, saved, onToggle
           {active === 'all' ? 'All Recipes' : `${goalLabel?.icon} ${goalLabel?.label}`}
         </h1>
         <p className="feed-page-sub">
-          {active === 'all' ? 'Evidence-based recipes from verified registered dieticians' : `Recipes to support ${goalLabel?.label.toLowerCase()}`}
+          {active === 'all' ? 'Condition-specific recipes, built by registered dietitians' : `Recipes to support ${goalLabel?.label.toLowerCase()}`}
         </p>
       </div>
       <div className="filter-row">
@@ -779,7 +762,7 @@ function FeedTab({ healthGoals, onRecipeClick, onDieticianClick, saved, onToggle
         ))}
       </div>
       {filtered.length === 0 ? (
-        <div className="empty-state"><div className="empty-icon">🌱</div><div className="empty-title">No recipes yet</div><div className="empty-text">Our dieticians are working on it. Check back soon!</div></div>
+        <div className="empty-state"><div className="empty-icon">🌱</div><div className="empty-title">No recipes yet</div><div className="empty-text">Our dietitians are working on recipes for this condition. Check back soon!</div></div>
       ) : (
         <div className="recipe-grid">
           {filtered.map(r => <RecipeCard key={r.id} recipe={r} onRecipeClick={onRecipeClick} onDieticianClick={onDieticianClick} isSaved={saved.has(r.id)} onToggleSave={onToggleSave} />)}
@@ -1124,7 +1107,7 @@ function downloadBook(savedRecipes) {
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<title>My Recipe Book — Nuri Recipes</title>
+<title>My Recipe Book — nuri.</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Dancing+Script:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -1175,7 +1158,7 @@ function downloadBook(savedRecipes) {
       <span class="cover-eyebrow">a personal collection from</span>
       <div class="cover-title">My Recipe<br/>Book</div>
       <div class="cover-divider"></div>
-      <div class="cover-brand">Nuri Recipes</div>
+      <div class="cover-brand">nuri.</div>
       <div class="cover-count">${savedRecipes.length} recipe${savedRecipes.length !== 1 ? 's' : ''} curated for you</div>
     </div>
   </div>
@@ -1244,7 +1227,7 @@ function SavedTab({ saved, onRecipeClick, onDieticianClick, onToggleSave }) {
           <span style={{
             fontFamily:'var(--font-script)', fontSize:11, color:'rgba(255,255,255,0.7)',
             writingMode:'vertical-rl', textOrientation:'mixed', letterSpacing:'0.12em',
-          }}>Nuri Recipes</span>
+          }}>nuri.</span>
         </div>
         {/* Cover face */}
         <div style={{
@@ -1263,7 +1246,7 @@ function SavedTab({ saved, onRecipeClick, onDieticianClick, onToggleSave }) {
             </div>
             <div style={{ width:40, height:2, background:'var(--tan)', borderRadius:2, margin:'16px 0' }}></div>
             <div style={{ fontSize:13, color:'var(--text-light)' }}>
-              {savedRecipes.length} recipe{savedRecipes.length !== 1 ? 's' : ''} · Nuri Recipes
+              {savedRecipes.length} recipe{savedRecipes.length !== 1 ? 's' : ''} · nuri.
             </div>
           </div>
         </div>
@@ -1534,8 +1517,8 @@ function YouTab({ healthGoals, followed, saved, tried, triedPhotos, onEditGoals,
             </div>
           ) : (
             <div className="apply-block">
-              <div className="apply-text">🩺 Are you a registered dietician? Apply to share your recipes on Nuri Recipes.</div>
-              <button className="apply-btn" onClick={onApply}>Apply to post recipes</button>
+              <div className="apply-text">🩺 Are you a registered dietician? Apply to share your recipes on nuri..</div>
+              <button className="apply-btn" onClick={onApply}>Apply as a founding RD ✨</button>
               <button style={{ marginTop: 10, background: 'transparent', border: 'none', fontSize: 12, color: 'var(--text-light)', cursor: 'pointer', fontFamily: 'var(--font-body)', textDecoration: 'underline' }} onClick={onToggleRD}>
                 I'm already an approved RD →
               </button>
@@ -1609,7 +1592,7 @@ function RDApplicationModal({ onClose }) {
               <div className="success-icon">🌿</div>
               <div className="success-title">Application received!</div>
               <p className="success-text">
-                Thank you for applying to Nuri Recipes. We review every application carefully to verify credentials. We'll be in touch within 5–7 business days.
+                Thank you for applying to nuri.. We review every application carefully to verify credentials. We'll be in touch within 5–7 business days.
               </p>
             </div>
           ) : (
@@ -1688,7 +1671,7 @@ function RDApplicationModal({ onClose }) {
               <div className="form-section">
                 <div className="form-section-title">A little about you</div>
                 <div className="form-group">
-                  <label className="form-label">Why do you want to join Nuri Recipes?</label>
+                  <label className="form-label">Why do you want to join nuri.?</label>
                   <textarea className="form-textarea" value={fields.bio} onChange={e => set('bio', e.target.value)} placeholder="Tell us about your approach to nutrition, who you work with, and what you'd like to share with our community..." />
                 </div>
               </div>
